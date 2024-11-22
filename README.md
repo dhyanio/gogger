@@ -1,6 +1,6 @@
 # Gogger
 
-Golang + Logger, is a simple and efficient logging library for Go (Golang) that provides easy-to-use logging functionalities.
+Golang + Logger is a simple and efficient logging library for Go (Golang) that provides easy-to-use logging functionalities.
 
 ## Features
 
@@ -34,10 +34,10 @@ func main() {
         panic(err)
     }
 
-    logger.Info("This is an info message")
-    logger.Warning("This is a warning message")
-    logger.Error("This is an error message")
-    logger.Debug("This is a debug message")
+    logger.Info().Str("TaskType", "mytask").Int("EventCount", len(numberOfEvens)).Msg("This is an info message")
+    logger.Warning.Str("TaskType", "mytask").Int("EventCount", len(numberOfEvens)).Msg("This is an warning message")
+    logger.Error.Str("TaskType", "mytask").Int("EventCount", len(numberOfEvens)).Msg("This is an error message")
+    logger.Debug.Str("TaskType", "mytask").Int("EventCount", len(numberOfEvens)).Msg("This is an debug message")
 }
 ```
 
@@ -46,12 +46,6 @@ func main() {
 You can customize the logger by setting different options in the configuration file:
 
 ```go
-package main
-
-import (
-    "github.com/dhyanio/gogger"
-)
-
 func main() {
     config := gogger.Config{
         Output: "stdout",
@@ -63,11 +57,6 @@ func main() {
     if err != nil {
         panic(err)
     }
-
-    logger.Info("This is an info message")
-    logger.Warning("This is a warning message")
-    logger.Error("This is an error message")
-    logger.Debug("This is a debug message")
 }
 ```
 
