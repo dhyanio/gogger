@@ -29,7 +29,7 @@ import (
 )
 
 func main() {
-    logger, err := gogger.NewLogger("logfile.log", gogger.DebugLevel)
+    logger, err := gogger.NewLogger("logfile.log", gogger.INFO)
     if err != nil {
         panic(err)
     }
@@ -50,7 +50,7 @@ func main() {
     config := gogger.Config{
         Output: "stdout",
         Format: "json",
-        Level:  gogger.DebugLevel,
+        Level:  gogger.INFO,
     }
 
     logger, err := gogger.NewLoggerWithConfig(config)
@@ -70,4 +70,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Acknowledgements
 
-Thanks to the Go community for their support and contributions.
+Thanks to the Go community for their support and contributions. ❤️
