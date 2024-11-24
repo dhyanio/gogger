@@ -29,15 +29,15 @@ import (
 )
 
 func main() {
-    logger, err := gogger.NewLogger("logfile.log", gogger.INFO)
+    log, err := gogger.NewLogger("logfile.log", gogger.INFO)
     if err != nil {
         panic(err)
     }
 
-    logger.Info().Str("TaskType", "mytask").Int("EventCount", len(numberOfEvens)).Msg("This is an info message")
-    logger.Warning.Str("TaskType", "mytask").Int("EventCount", len(numberOfEvens)).Msg("This is an warning message")
-    logger.Error.Str("TaskType", "mytask").Int("EventCount", len(numberOfEvens)).Msg("This is an error message")
-    logger.Debug.Str("TaskType", "mytask").Int("EventCount", len(numberOfEvens)).Msg("This is an debug message")
+    log.Info().Str("TaskType", "mytask").Int("EventCount", len(numberOfEvens)).Msg("This is an info message")
+    log.Warning.Str("TaskType", "mytask").Int("EventCount", len(numberOfEvens)).Msg("This is an warning message")
+    log.Error.Str("TaskType", "mytask").Int("EventCount", len(numberOfEvens)).Msg("This is an error message")
+    log.Debug.Str("TaskType", "mytask").Int("EventCount", len(numberOfEvens)).Msg("This is an debug message")
 }
 ```
 
@@ -53,7 +53,7 @@ func main() {
         Level:  gogger.INFO,
     }
 
-    logger, err := gogger.NewLoggerWithConfig(config)
+    log, err := gogger.NewLoggerWithConfig(config)
     if err != nil {
         panic(err)
     }
